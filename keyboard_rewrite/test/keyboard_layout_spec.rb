@@ -41,6 +41,20 @@ describe Y2Keyboard::KeyboardLayout do
       )
 
       keyboard_layout.set_layout(new_layout)
-    end    
-  end  
+    end
+  end
+
+  describe ".set_delay_and_rate" do
+    subject(:keyboard_layout) { Y2Keyboard::KeyboardLayout }
+
+    it "set delay and rate in console" do
+      rate = 235;
+      delay = 10;
+      expect(Cheetah).to receive(:run).with(
+        "kbdrate", "-d", delay, "-r", rate
+      )
+
+      keyboard_layout.set_delay_and_rate(delay, rate)
+    end
+  end
 end

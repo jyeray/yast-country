@@ -26,5 +26,9 @@ module Y2Keyboard
     def self.set_layout(keyboard_layout)
       Cheetah.run("localectl", "set-keymap", keyboard_layout.code)
     end
+
+    def self.set_delay_and_rate(delay, rate)
+      Cheetah.run("kbdrate", "-d", delay, "-r", rate)
+    end
   end
 end
