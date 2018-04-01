@@ -29,6 +29,7 @@ module Y2Keyboard
 
     def self.set_delay_and_rate(delay, rate)
       Cheetah.run("kbdrate", "-d", delay, "-r", rate)
+      Cheetah.run("xset", "r", "rate", delay, rate)
     end
   end
 end
