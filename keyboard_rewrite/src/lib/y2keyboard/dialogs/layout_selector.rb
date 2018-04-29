@@ -1,6 +1,7 @@
 require "yast"
 require "ui/dialog"
 require_relative "../keyboard_layout"
+require_relative 'expert_settings'
 
 Yast.import "UI"
 Yast.import "Popup"
@@ -24,7 +25,12 @@ module Y2Keyboard
             Id(:layout_lists),
             _("&Keyboard Layout"),
             @keyboard_layouts.map(&:description)
-            ),
+          ),
+          HBox(
+            HSpacing(),
+            PushButton(Id(:expert_settings), _("expert settings")),
+            HSpacing()
+          ),
           footer
         )
       end
@@ -34,6 +40,10 @@ module Y2Keyboard
         layout = @keyboard_layouts.find { |x| x.description == selected_layout }
         Y2Keyboard::KeyboardLayout.set_layout(layout)
         finish_dialog
+      end
+
+      def expert_settings_handler
+        ExpertSettings.run
       end
 
       def footer

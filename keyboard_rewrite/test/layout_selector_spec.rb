@@ -28,7 +28,7 @@ describe Y2Keyboard::Dialogs::LayoutSelector do
 
   describe "#accept_handler" do
     before do
-      mock_ui_events(:accept)      
+      mock_ui_events(:accept)
     end
 
     it "change the keymap to the selected layout" do
