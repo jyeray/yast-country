@@ -15,7 +15,6 @@ module Y2Keyboard
         textdomain "country"
       end
 
-
       def dialog_content
         MinSize(
           MIN_WIDTH,
@@ -23,10 +22,19 @@ module Y2Keyboard
           VBox(
             InputField(Id(:rate), Opt(:hstretch), _("Repeat &Rate")),
             InputField(Id(:delay), Opt(:hstretch), _("De&lay before Repetition Starts")),
+            footer
           )
         )
       end
 
+      def footer
+        HBox(
+          HSpacing(),
+          PushButton(Id(:cancel), Yast::Label.CancelButton),
+          PushButton(Id(:accept), Yast::Label.AcceptButton),
+          HSpacing()
+        )
+      end
     end
   end
 end
