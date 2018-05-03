@@ -28,7 +28,7 @@ module Y2Keyboard
           ),
           HBox(
             HSpacing(),
-            PushButton(Id(:expert_settings), _("expert settings")),
+            PushButton(Id(:expert_settings), _("E&xpert settings...")),
             HSpacing()
           ),
           footer

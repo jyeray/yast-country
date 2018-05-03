@@ -21,8 +21,8 @@ module Y2Keyboard
           MIN_WIDTH,
           MIN_HEIGHT,
           VBox(
-            InputField(Id(:rate), Opt(:hstretch), _("Repeat Rate")),
-            InputField(Id(:delay), Opt(:hstretch), _("Delay before Repetition Starts")),
+            InputField(Id(:rate), Opt(:hstretch), _("Repeat &Rate")),
+            InputField(Id(:delay), Opt(:hstretch), _("De&lay before Repetition Starts")),
           )
         )
       end
