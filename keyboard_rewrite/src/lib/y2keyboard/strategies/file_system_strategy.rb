@@ -43,7 +43,11 @@ module Y2Keyboard
 
       # @return [KeyboardLayout] the current keyboard layout in the system.
       def current_layout
-        "es"
+        file_path = File.join(__dir__, "../data/currentKeyboard")
+        file = File.new(file_path, "r")
+        current_layout_code = file.read
+        file.close
+        current_layout_code
       end
 
     end
