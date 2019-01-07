@@ -23,7 +23,7 @@ require_relative "../keyboard_layout"
 module Y2Keyboard
   module Strategies
     # Class to deal with file system keyboard configuration management.
-    class SystemdStrategy
+    class FileSystemStrategy
       # @return [Array<String>] an array with all available systemd keyboard layouts codes.
       def codes
 
