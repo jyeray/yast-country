@@ -35,7 +35,10 @@ module Y2Keyboard
 
       # @param keyboard_layout [KeyboardLayout] the keyboard layout to apply in the system.
       def apply_layout(keyboard_layout)
-
+        file_path = File.join(__dir__, "../data/currentKeyboard")
+        file = File.new(file_path, "w")
+        file.write(keyboard_layout.code)
+        file.close
       end
 
       # @return [KeyboardLayout] the current keyboard layout in the system.
