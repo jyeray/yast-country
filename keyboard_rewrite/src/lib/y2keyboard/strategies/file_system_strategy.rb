@@ -26,7 +26,11 @@ module Y2Keyboard
     class FileSystemStrategy
       # @return [Array<String>] an array with all available systemd keyboard layouts codes.
       def codes
-
+        file_path = File.join(__dir__, "../data/keyboardCodes.data")
+        file = File.new(file_path, "r")
+        raw_codes = file.read
+        file.close
+        raw_codes
       end
 
       # @param keyboard_layout [KeyboardLayout] the keyboard layout to apply in the system.
@@ -36,7 +40,7 @@ module Y2Keyboard
 
       # @return [KeyboardLayout] the current keyboard layout in the system.
       def current_layout
-
+        "es"
       end
 
     end
